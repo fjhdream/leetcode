@@ -1,6 +1,6 @@
-use leetcode::leetcode::leetcode1018;
+use leetcode::leetcode::leetcode947;
 fn main() {
-    let ans = leetcode1018::prefixes_div_by5(vec![1,0,1,1,1,1]);
-    println!("Hello, world!");
-    println!("{:?}", ans);
+    let example = vec![vec![0,0], vec![0,1], vec![1,0], vec![1,2], vec![2,1], vec![2,2]];
+    let ans = leetcode947::remove_stones(example);
+    println!("{}", ans);
 }
