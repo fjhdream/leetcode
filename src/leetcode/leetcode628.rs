@@ -1,4 +1,3 @@
-use std::i32::{MIN, MAX};
 use std::cmp::max;
 pub fn maximum_product(nums: Vec<i32>) -> i32 {
     let mut min1 = i32::MAX;
