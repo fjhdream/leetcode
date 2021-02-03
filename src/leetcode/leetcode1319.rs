@@ -36,16 +36,16 @@ impl UnionFind {
     }
 
     fn unite(&mut self, x: i32, y :i32) {
-        let x = self.find(x) as usize;
-        let y = self.find(y) as usize;
+        let mut x = self.find(x) as usize;
+        let mut y = self.find(y) as usize;
         if x == y {
             return;
         }
 
         if self.size[x] < self.size[y] {
             let _tmp = x;
-            let x = y;
-            let y = x;
+            x = y;
+            y = _tmp;
         }
         self.parent[y] = x as i32;
         self.set_count -= 1;
