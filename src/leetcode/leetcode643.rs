@@ -23,4 +23,4 @@ pub fn test_example() {
     let k = 4;
     let ans = find_max_average(nums, k);
     assert_eq!(ans, 12.75);
-}
+}    
