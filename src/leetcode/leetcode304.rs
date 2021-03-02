@@ -15,7 +15,7 @@ impl NumMatrix {
             let n = matrix[0].len();
             let mut sum = vec![vec![0;n+1]; m+1];
             for i in 0..m {
-                for j in 0..gitn {
+                for j in 0..n {
                     sum[i+1][j+1] = sum[i+1][j] + sum[i][j+1] - sum[i][j] + matrix[i][j];
                 }
             }
