@@ -9,7 +9,10 @@ pub fn find132pattern(nums: Vec<i32>) -> bool {
             return true;
         }
 
-        while !stack.is_empty() && stack.last().unwrap() < &num {
+        while let Some(&peek) = stack.last() {
+            if peek >= num {
+                break;
+            }
             if let Some(pop_num) = stack.pop(){
                 max_k = max_k.max(pop_num);
             }
