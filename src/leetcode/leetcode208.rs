@@ -13,6 +13,7 @@ struct Node {
  * `&self` means the method takes an immutable reference.
  * If you need a mutable reference, change it to `&mut self` instead.
  */
+ #[allow(dead_code)]
 impl Trie {
 
     /** Initialize your data structure here. */
