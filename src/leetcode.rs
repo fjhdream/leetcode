@@ -6,3 +6,5 @@ mod leetcode150;
 mod leetcode27;
 mod leetcode938;
 mod treenode;
+mod leetcode115;
+mod leetcode1486;
