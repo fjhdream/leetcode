@@ -14,3 +14,5 @@ mod leetcode664;
 mod leetcode1310;
 mod leetcode1787;
 mod Leetcode1190;
+mod leetcode477;
+mod leetcode231;
