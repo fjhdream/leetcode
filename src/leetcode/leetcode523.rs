@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-#[warn(dead_code)]
+#[allow(dead_code)]
 pub fn check_subarray_sum(nums: Vec<i32>, k: i32) -> bool {
     let mut pre_sum = 0;
     let mut map = HashMap::new();
