@@ -21,10 +21,35 @@ pub fn find_target_sum_ways(nums: Vec<i32>, target: i32) -> i32 {
     dp[n][neg_num]
 }
 
+static mut count: i32 = 0;
+
+pub fn find_target_sum_ways2(nums: &Vec<i32>, target: i32) -> i32 {
+    dfs(&nums, target, 0, 0);
+    unsafe {
+        return count;
+    }
+}
+
+fn dfs(nums: &Vec<i32>, target:i32, index:usize, sum: i32) {
+    if index == nums.len() { 
+        if target == sum {
+            unsafe {
+                count += 1;
+            }
+        } 
+    } else {
+        dfs(nums, target, index + 1, sum - nums[index]);
+        dfs(nums, target, index + 1, sum + nums[index]);
+    }
+
+}
+
 #[test]
 fn test_example() {
     let nums = vec![1,1,1,1,1];
     let target = 3;
+    let ans2 = find_target_sum_ways2(&nums, target);
     let ans = find_target_sum_ways(nums, target);
     assert_eq!(ans, 5);
+    assert_eq!(ans2, ans);
 }
