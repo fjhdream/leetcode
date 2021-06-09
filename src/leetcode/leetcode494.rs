@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 pub fn find_target_sum_ways(nums: Vec<i32>, target: i32) -> i32 {
     let sum: i32 = nums.iter().sum();
     let neg = sum - target;
@@ -21,12 +22,13 @@ pub fn find_target_sum_ways(nums: Vec<i32>, target: i32) -> i32 {
     dp[n][neg_num]
 }
 
-static mut count: i32 = 0;
+static mut COUNT: i32 = 0;
 
+#[allow(dead_code)]
 pub fn find_target_sum_ways2(nums: &Vec<i32>, target: i32) -> i32 {
     dfs(&nums, target, 0, 0);
     unsafe {
-        return count;
+        return COUNT;
     }
 }
 
@@ -34,7 +36,7 @@ fn dfs(nums: &Vec<i32>, target:i32, index:usize, sum: i32) {
     if index == nums.len() { 
         if target == sum {
             unsafe {
-                count += 1;
+                COUNT += 1;
             }
         } 
     } else {
