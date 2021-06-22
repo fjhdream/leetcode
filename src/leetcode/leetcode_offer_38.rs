@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 pub fn permutation(mut s: String) -> Vec<String> {
     let n = s.len();
     let mut res = Vec::new();
