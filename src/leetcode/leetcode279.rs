@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 pub fn num_squares(n: i32) -> i32 {
     let mut answer = n;
     let n = n as usize;
