@@ -1,8 +1,9 @@
-unsafe fn guess(num: i32) -> i32 {
+unsafe fn guess(_num: i32) -> i32 {
     0
 }
 
-unsafe fn guessNumber(n: i32) -> i32 {
+#[allow(dead_code)]
+unsafe fn guess_number(n: i32) -> i32 {
     let mut l = 0;
     let mut r = n;
     while l <= r {
