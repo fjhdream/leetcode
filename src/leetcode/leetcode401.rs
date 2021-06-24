@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 pub fn read_binary_watch(turned_on: i32) -> Vec<String> {
     let mut ans = Vec::new();
     for i in 0..1024 as i32 {

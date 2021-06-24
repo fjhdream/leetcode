@@ -1,4 +1,6 @@
-unsafe fn guess(_num: i32) -> i32 {
+#[allow(dead_code)]
+#[allow(unused_variables)]
+unsafe fn guess(num: i32) -> i32 {
     0
 }
 
