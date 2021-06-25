@@ -7,3 +7,4 @@ mod leetcode1600;
 mod leetcode_offer_38;
 mod leetcode401;
 mod leetcode149;
+mod leetcode752;
