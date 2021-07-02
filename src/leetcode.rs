@@ -11,3 +11,5 @@ mod leetcode752;
 mod leetcode773;
 mod leetcode300;
 mod leetcode815;
+mod leetcode_lcp_07;
+mod leetcode1833;
