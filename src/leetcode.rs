@@ -15,3 +15,4 @@ mod leetcode_lcp_07;
 mod leetcode1833;
 mod leetcode451;
 mod leetcode645;
+mod leetcode726;
