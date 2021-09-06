@@ -1,5 +1,2 @@
-mod leetcode1649;
-mod leetcode787;
-mod leetcode881;
-mod leetcode1588;
-mod leetcode528;
+mod leetcode_offer_22;
+mod leetcode704;
