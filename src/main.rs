@@ -1,4 +1,3 @@
-
 fn main() {
     let mut num = 0;
     for big_meal in 2..=13734i32 {
