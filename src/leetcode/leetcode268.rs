@@ -12,7 +12,7 @@ pub fn missing_number(nums: Vec<i32>) -> i32 {
 
 #[test]
 pub fn test_example() {
-    let nums = vec![9,6,4,2,3,5,7,0,1];
+    let nums = vec![9, 6, 4, 2, 3, 5, 7, 0, 1];
     let ans = missing_number(nums);
     assert_eq!(ans, 8);
 }

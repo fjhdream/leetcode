@@ -9,7 +9,7 @@ pub fn plus_one(mut digits: Vec<i32>) -> Vec<i32> {
             return digits;
         }
     }
-    
+
     let mut ans = vec![0; n + 1];
     ans[0] = 1;
     return ans;
