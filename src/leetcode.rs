@@ -4,3 +4,4 @@ mod leetcode1005;
 mod leetcode383;
 mod leetcode1078;
 mod leetcode2022;
+mod leetcode1576;
