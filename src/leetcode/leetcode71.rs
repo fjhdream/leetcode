@@ -1,13 +1,13 @@
 pub fn simplify_path(path: String) -> String {
     let mut queue = Vec::new();
-    path.split("/").for_each(|letter| {
-        match letter {
-            "." | "" => (),
-            ".." => {queue.pop();},
-            _ => queue.push(letter),
+    path.split("/").for_each(|letter| match letter {
+        "." | "" => (),
+        ".." => {
+            queue.pop();
         }
+        _ => queue.push(letter),
     });
-    
+
     "/".to_string() + &queue.join("/")
 }
 
