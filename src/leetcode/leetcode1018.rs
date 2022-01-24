@@ -6,4 +6,4 @@ pub fn prefixes_div_by5(a: Vec<i32>) -> Vec<bool> {
             answer.push(prefix == 0);
         }
         answer
-    }
+   }
