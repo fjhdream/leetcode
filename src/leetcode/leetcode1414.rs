@@ -1,13 +1,13 @@
 pub fn find_min_fibonacci_numbers(mut k: i32) -> i32 {
-    let mut fibs = vec![1,1];
-    let (mut a, mut b) = (1,1);
+    let mut fibs = vec![1, 1];
+    let (mut a, mut b) = (1, 1);
     while a + b <= k {
-        let c= a + b;
+        let c = a + b;
         fibs.push(a + b);
         a = b;
         b = c;
     }
-    
+
     let mut ans = 0;
     let mut i = fibs.len() - 1;
     while k > 0 {
