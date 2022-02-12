@@ -1,4 +1,4 @@
-fn nb_year(p0: i32, percent: f64, aug: i32, p: i32)-> i32 {
+fn nb_year(p0: i32, percent: f64, aug: i32, p: i32) -> i32 {
     let mut ans = 0;
     let mut person = p0;
     while person < p {
@@ -9,7 +9,7 @@ fn nb_year(p0: i32, percent: f64, aug: i32, p: i32)-> i32 {
 }
 
 #[cfg(test)]
-    mod tests {
+mod tests {
     use super::*;
 
     fn dotest(p0: i32, percent: f64, aug: i32, p: i32, exp: i32) -> () {
@@ -17,7 +17,7 @@ fn nb_year(p0: i32, percent: f64, aug: i32, p: i32)-> i32 {
         println!("percent: {:?};", percent);
         println!("aug: {:?};", aug);
         println!("p: {:?};", p);
-        let ans =nb_year(p0, percent, aug, p);
+        let ans = nb_year(p0, percent, aug, p);
         println!("actual:\n{:?};", ans);
         println!("expect:\n{:?};", exp);
         println!("{};", ans == exp);

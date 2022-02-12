@@ -1,2 +1,2 @@
-pub mod leetcode;
 mod codewars;
+pub mod leetcode;
