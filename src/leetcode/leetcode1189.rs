@@ -25,7 +25,7 @@ pub fn max_number_of_balloons(text: String) -> i32 {
 }
 
 fn is_ball_char(ch: char) -> bool {
-    return ch == 'b' || ch == 'a' || ch == 'l' || ch =='o' || ch == 'n';
+    return ch == 'b' || ch == 'a' || ch == 'l' || ch == 'o' || ch == 'n';
 }
 
 #[test]
@@ -39,7 +39,6 @@ fn test2() {
     let ans = max_number_of_balloons(String::from("loonbalxballpoon"));
     assert_eq!(ans, 2);
 }
-
 
 #[test]
 fn test3() {

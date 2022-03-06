@@ -47,31 +47,30 @@ pub fn avoid_flood(rains: Vec<i32>) -> Vec<i32> {
 
 #[test]
 fn test() {
-    let ans = avoid_flood(vec![1,2,0,0,2,1]);
-    assert_eq!(ans, vec![-1,-1,2,1,-1,-1]);
+    let ans = avoid_flood(vec![1, 2, 0, 0, 2, 1]);
+    assert_eq!(ans, vec![-1, -1, 2, 1, -1, -1]);
 }
 
 #[test]
 fn test2() {
-    let ans = avoid_flood(vec![1,2,3,4]);
-    assert_eq!(ans, vec![-1,-1,-1,-1]);
+    let ans = avoid_flood(vec![1, 2, 3, 4]);
+    assert_eq!(ans, vec![-1, -1, -1, -1]);
 }
 
 #[test]
 fn test3() {
-    let ans = avoid_flood(vec![1,2,0,1,2]);
+    let ans = avoid_flood(vec![1, 2, 0, 1, 2]);
     assert_eq!(ans, vec![]);
 }
 
-
 #[test]
 fn test4() {
-    let ans = avoid_flood(vec![69,0,0,0,69]);
-    assert_eq!(ans, vec![-1,69,1,1,-1]);
+    let ans = avoid_flood(vec![69, 0, 0, 0, 69]);
+    assert_eq!(ans, vec![-1, 69, 1, 1, -1]);
 }
 
 #[test]
 fn test5() {
-    let ans = avoid_flood(vec![10,20,20]);
+    let ans = avoid_flood(vec![10, 20, 20]);
     assert_eq!(ans, vec![]);
 }
