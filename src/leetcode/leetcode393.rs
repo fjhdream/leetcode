@@ -14,7 +14,7 @@ pub fn valid_utf8(data: Vec<i32>) -> bool {
         if i + cnt >= n + 1 {
             return false;
         }
-        let mut k = i + 1;
+        let mut k = i + 1;       
         while k < i + cnt as usize {
             if ((data[k] >> 7) & 1) == 1 && ((data[k] >> 6) & 1) == 0 {
                 k += 1;
