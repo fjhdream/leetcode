@@ -1,1 +1,1 @@
-mod leetcode728;
+mod leetcode380;
