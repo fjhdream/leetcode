@@ -21,11 +21,7 @@ fn solve(lines: &mut Lines<StdinLock>) -> Result<()> {
     let (left, right) = (0, 0);
     let mut distinct = 0;
     let mut cnt = [0; 26];
-    while right < n {
-        if distinct < b {
-            cnt[]
-        }
-    }
+    
     
     Ok(())
 }

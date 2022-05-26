@@ -1,0 +1,3 @@
+struct segement_tree {
+    
+}
