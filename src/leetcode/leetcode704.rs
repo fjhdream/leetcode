@@ -26,6 +26,6 @@ fn test_example() {
 
 #[test]
 fn test_example2() {
-    let ans = search(vec![-5], 5);
+    let ans = search(vec![5], -5);
     assert_eq!(ans, -1);
 }
