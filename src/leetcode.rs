@@ -1,5 +1,9 @@
 mod leeetcode468;
 mod leetcode1022;
 mod leetcode1385;
+mod leetcode34;
+mod leetcode450;
+mod leetcode473;
 mod leetcode69;
 mod leetcode744;
+mod leetcode_offer_114;
