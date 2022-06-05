@@ -7,6 +7,47 @@ use std::collections::{BinaryHeap, HashMap, VecDeque};
 use std::io;
 use std::{io::prelude::*, io::*, str};
 
+#[derive(Debug, Clone, Eq, PartialEq)]
+struct tree_array {
+    trees: Vec<i64>,
+    n: usize,
+}
+
+impl tree_array {
+    fn new(n: usize) -> Self {
+        tree_array {
+            n,
+            trees: vec![0; n + 1],
+        }
+    }
+
+    fn low_bit(x: i64) -> i64 {
+        x & -x
+    }
+
+    fn add(&mut self, x: usize, data: i64) {
+        let mut i = x + 1;
+        while i <= self.n {
+            self.trees[i] += data;
+            i += Self::low_bit(i as i64) as usize;
+        }
+    }
+
+    fn query(&self, x: usize) -> i64 {
+        let mut i = x + 1;
+        let mut res = 0;
+        while i > 0 {
+            res += self.trees[i];
+            let diff = Self::low_bit(i as i64);
+            if diff >= i as i64 {
+                break;
+            }
+            i -= diff as usize;
+        }
+        res
+    }
+}
+
 fn solve(lines: &mut Lines<StdinLock>) -> Result<()> {
     let mut out = BufWriter::new(stdout());
     let nums: Vec<i64> = lines
@@ -16,53 +57,24 @@ fn solve(lines: &mut Lines<StdinLock>) -> Result<()> {
         .split_whitespace()
         .map(|ch| ch.parse::<i64>().unwrap())
         .collect();
-    let (mut n, mut a, b) = (nums[0], nums[1], nums[2]);
-
-    if !(a <= n / 2 && b >= n / 2 + 1 || a == n / 2 + 1 && b == n / 2) {
-        writeln!(out, "{}", -1)?;
-        return Ok(());
+    let n = nums[0] as usize;
+    let str = lines.next().unwrap().unwrap();
+    let mut str_chs = str.chars().collect::<Vec<_>>();
+    let mut res = 0i64;
+    let mut prefix_minus_num = vec![0i64; n + 1];
+    for (i, ch) in str_chs.iter().enumerate() {
+        prefix_minus_num[i + 1] = prefix_minus_num[i] + if *ch == '-' { 1 } else { -1 };
     }
-
-    let mut res = vec![0; n as usize];
-    res[0] = a;
-    res[n as usize - 1] = b;
-    let mut left = 1 as usize;
-    let mut right = n as usize - 2;
-    let (mut left_val, mut right_val) = (n, 1);
-
-    let (mut left_min, mut right_max) = (a, b);
-
-    let mid = (n / 2) as usize;
-    while left < mid {
-        if left_val == a || left_val == b {
-            left_val -= 1;
+    for m in 0..3 {
+        let mut tree_array = tree_array::new(2 * n + 1);
+        for i in 0..=n {
+            if (prefix_minus_num[i] - m) % 3 == 0 {
+                res += tree_array.query((prefix_minus_num[i] + n as i64) as usize);
+                tree_array.add((n as i64 + prefix_minus_num[i]) as usize, 1);
+            }
         }
-        res[left] = left_val;
-        left_min = left_min.min(left_val);
-        left += 1;
-        left_val -= 1;
     }
-
-    while mid <= right {
-        if right_val == a || right_val == b {
-            right_val += 1;
-        }
-        res[right] = right_val;
-        right_max = right_max.max(right_val);
-        right -= 1;
-        right_val += 1;
-    }
-
-    if left_min != a || right_max != b {
-        writeln!(out, "{}", -1)?;
-        return Ok(());
-    }
-
-    for val in res {
-        write!(out, "{} ", val)?;
-    }
-    writeln!(out)?;
-
+    writeln!(out, "{}", res)?;
     Ok(())
 }
 
