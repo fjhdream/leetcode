@@ -1,3 +1,1 @@
-struct segement_tree {
-    
-}
+struct segement_tree {}

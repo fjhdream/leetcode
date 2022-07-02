@@ -5,10 +5,10 @@ struct tree_array {
 impl tree_array {
     fn new(n: usize) -> Self {
         tree_array {
-            trees: vec![0; n+1]
+            trees: vec![0; n + 1],
         }
     }
-    
+
     fn low_bit(x: i32) -> i32 {
         x & -x
     }
