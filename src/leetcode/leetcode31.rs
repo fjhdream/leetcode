@@ -23,17 +23,16 @@ pub fn next_permutation(nums: &mut Vec<i32>) {
 
 #[test]
 fn test() {
-    let mut arr = vec![2,3,0,2,4,1];
+    let mut arr = vec![2, 3, 0, 2, 4, 1];
     next_permutation(&mut arr);
-    assert_eq!(arr, vec![2,3,0,4,1,2]);
+    assert_eq!(arr, vec![2, 3, 0, 4, 1, 2]);
 }
-
 
 #[test]
 fn test2() {
-    let mut arr = vec![3,2,1];
+    let mut arr = vec![3, 2, 1];
     next_permutation(&mut arr);
-    assert_eq!(arr, vec![1,2,3]);
+    assert_eq!(arr, vec![1, 2, 3]);
 }
 
 #[test]
