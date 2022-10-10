@@ -1,6 +1,6 @@
 pub fn reverse_parentheses(s: String) -> String {
     let n = s.len();
-    let mut chars : Vec<char>= s.chars().collect();
+    let mut chars: Vec<char> = s.chars().collect();
     let mut stack = Vec::new();
 
     for i in 0..n {
@@ -28,11 +28,11 @@ pub fn reverse_parentheses2(s: String) -> String {
     let mut pair = vec![0 as usize; n];
     let mut stack = Vec::new();
 
-    let mut chars : Vec<char> = s.chars().collect();
+    let mut chars: Vec<char> = s.chars().collect();
     for i in 0..n {
         if chars[i] == '(' {
             stack.push(i);
-        } else if chars[i] == ')'{
+        } else if chars[i] == ')' {
             let j = stack.pop().unwrap();
             pair[i] = j;
             pair[j] = i;
@@ -64,3 +64,4 @@ pub fn test() {
     println!("ans2 is ({})", ans2);
     assert_eq!(ans, ans2);
 }
+
