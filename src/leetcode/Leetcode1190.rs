@@ -64,4 +64,3 @@ pub fn test() {
     println!("ans2 is ({})", ans2);
     assert_eq!(ans, ans2);
 }
-
