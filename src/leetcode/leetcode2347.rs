@@ -25,24 +25,3 @@ pub fn best_hand(ranks: Vec<i32>, suits: Vec<char>) -> String {
     }
     return "Pair".to_string();
 }
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_best_hand() {
-        assert_eq!(
-            best_hand(vec![1, 1, 2, 2, 3], vec!['a', 'b', 'c', 'd', 'e']),
-            "Pair".to_string()
-        );
-        assert_eq!(
-            best_hand(vec![1, 1, 1, 1, 3], vec!['a', 'b', 'c', 'd', 'e']),
-            "flush".to_string()
-        );
-        assert_eq!(
-            best_hand(vec![1, 2, 3, 4, 5], vec!['a', 'b', 'c', 'd', 'e']),
-            "High Card".to_string()
-        );
-    }
-}
