@@ -9,3 +9,4 @@ mod leetcode2293;
 mod leetcode2299;
 mod leetcode2347;
 mod leetcode2351;
+mod leetcode2389;
