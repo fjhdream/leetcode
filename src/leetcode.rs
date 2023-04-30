@@ -1,4 +1,5 @@
 mod leeetcode1824;
+mod leetcode1;
 mod leetcode1005;
 mod leetcode1033;
 mod leetcode1039;
@@ -17,3 +18,4 @@ mod leetcode2389;
 mod leetcode2409;
 mod leetcode2427;
 pub mod leetcode3;
+mod leetcode49;
