@@ -1,33 +1,32 @@
 pub fn find_anagrams(s: String, p: String) -> Vec<i32> {
     let s_bytes = s.as_bytes();
     let p_bytes = p.as_bytes();
-    let s_len = s_bytes.len();
-    let p_len = p_bytes.len();
-
+    let s_len = s.len();
+    let p_len = p.len();
+    let mut ans = vec![];
     if s_len < p_len {
-        return Vec::new();
+        return ans;
     }
-
-    let mut s_count = [0;26];
-    let mut p_count = [0;26];
+    let mut pattern = vec![0; 26];
     for i in 0..p_len {
-        s_count[(s_bytes[i] - 'a' as u8) as usize] += 1;
-        p_count[(p_bytes[i] - 'a' as u8) as usize] += 1;
+        pattern[(p_bytes[i] - b'a') as usize] += 1;
     }
 
-    let mut ans = Vec::new();
-    if s_count.eq(&p_count) {
-        ans.push(0);
-    }
-
-    for i in 0..(s_len - p_len) {
-        s_count[(s_bytes[i] - 'a' as u8) as usize] -= 1;
-        s_count[(s_bytes[i + p_len] - 'a' as u8) as usize] += 1;
-        if s_count.eq(&p_count) {
-            ans.push(i as i32 + 1);
+    let mut start = 0;
+    let mut end = 0;
+    let mut window = vec![0; 26];
+    while end < s_len {
+        let idx = (s_bytes[end] - b'a') as usize;
+        window[idx] += 1;
+        if end - start + 1 == p_len {
+            if window == pattern {
+                ans.push(start as i32);
+            }
+            window[(s_bytes[start] - b'a') as usize] -= 1;
+            start += 1;
         }
+        end += 1;        
     }
-
     ans
 }
 
