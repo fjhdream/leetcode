@@ -7,3 +7,4 @@ mod leetcode283;
 mod leetcode3;
 mod leetcode35;
 mod leetcode970;
+mod leetcode1003;
