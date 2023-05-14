@@ -20,7 +20,7 @@ fn solve(lines: &mut Lines<StdinLock>) -> Result<()> {
         .map(|ch| ch.parse::<i64>().unwrap())
         .collect();
     let (n, p) = (inputs[0], inputs[1]);
-    let mut nums = lines
+    let nums = lines
         .next()
         .unwrap()
         .unwrap()
