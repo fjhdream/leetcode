@@ -2,6 +2,7 @@ mod leetcode1010;
 mod leetcode1016;
 mod leetcode1054;
 mod leetcode1072;
+mod leetcode1267;
 mod leetcode1439;
 mod leetcode2337;
 mod leetcode2441;
