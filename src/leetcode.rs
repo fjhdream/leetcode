@@ -8,6 +8,7 @@ mod leetcode1439;
 mod leetcode2337;
 mod leetcode2441;
 mod leetcode2481;
+mod leetcode2578;
 mod leetcode2596;
 mod leetcode337;
 mod leetcode460;
