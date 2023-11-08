@@ -17,3 +17,4 @@ mod leetcode2693;
 mod leetcode337;
 mod leetcode460;
 mod treenode;
+mod leetcode2586;
