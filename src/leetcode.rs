@@ -1,13 +1,3 @@
 mod ListNode;
-mod leeetcode1962;
-mod leetcod1276;
-mod leetcode1038;
-mod leetcode1457;
-mod leetcode162;
-mod leetcode1954;
-mod leetcode2008;
-mod leetcode2171;
-mod leetcode2276;
-mod leetcode2477;
-mod leetcode2487;
+mod leetcode2765;
 pub mod treenode;
