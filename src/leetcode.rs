@@ -1,3 +1,2 @@
-mod ListNode;
-mod leetcode2765;
+pub mod leetcode746;
 pub mod treenode;
