@@ -14,4 +14,11 @@ mod test {
     fn test_min_cost_climbing_stairs() {
         assert_eq!(min_cost_climbing_stairs(vec![10, 15, 20]), 15);
     }
+    #[test]
+    fn test_min_cost_climbing_stairs_2() {
+        assert_eq!(
+            min_cost_climbing_stairs(vec![1, 100, 1, 1, 1, 100, 1, 1, 100, 1]),
+            6
+        );
+    }
 }
